@@ -1,175 +1,66 @@
----
-sidebar_position: 0
----
+#==========================================
+#@configName 墨鱼自用Surfboard配置文件
+#@Author@ddgksf2013
+#@TgChannel 𝐡𝐭𝐭𝐩𝐬://𝐭.𝐦𝐞/𝐝𝐝𝐠𝐤𝐬𝐟𝟐𝟎𝟐𝟏
+#@微信ID公众号@墨鱼手记
+#@Feedback           💡请通过邮件反馈问题[其它方式一概无视]：𝐝𝐝𝐠𝐤𝐬𝐟𝟐𝟎𝟏𝟑@𝟏𝟔𝟑.𝐜𝐨𝐦  💡
+#@UpdateTime2024/04/1922:35UTC/GMT+8
+#@函数支持手动选择、自动测速、广告屏蔽、兜底分流、按国家分组节点、多机场订阅等
+#@Thanks@blackmatrix7，@猫队，@DivineEngine
+#@Attention          𝐏𝐥𝐞𝐚𝐬𝐞 𝐠𝐨 𝐭𝐨 𝐆𝐨𝐨𝐠𝐥𝐞 𝐏𝐥𝐚𝐲 𝐒𝐭𝐨𝐫𝐞 𝐭𝐨 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐭𝐡𝐞 𝐥𝐚𝐭𝐞𝐬𝐭 𝐒𝐮𝐫𝐟𝐛𝐨𝐚𝐫𝐝
+#@ConfigVersion1.0.3
+#==========================================
 
-# Overview
+[一般的]
 
-:::tip
-Surfboard follow [Surge](https://nssurge.com/)'s profile format
+loglevel=notify
+interface=127.0.0.1
+skip-proxy=127.0.0.1，192.168.0.0/16,10.0.0.0/8，172.16.0.0/12，100.64.0.0/10，localhost，*.local
+IPv6=false
+dns-server=系统，223.5.5.5
+exclude-simple-hostname=true
+按规则增强模式=true
 
-Surge's profile documentation can be viewed [here](https://manual.nssurge.com/)
-:::
+[代理]
 
-```ini
-#!MANAGED-CONFIG http://test.com/surfboard.conf interval=60 strict=true # subscribe profile url and auto update config
-[General]
-# Specify dns server used by application
-dns-server = system, 8.8.8.8, 8.8.4.4, 9.9.9.9:9953
 
-# Specify doh server used by application
-doh-server = https://9.9.9.9/dns-query
+[代理组]
 
-# Specify route rule and domain rule, matching traffic will not be redirected or rejected.
-skip-proxy = 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, localhost, *.local, www.baidu.com //444
+🚀 手动切换=select， 🇭🇰 香港节点， 🇺🇸 美国节点， 🇸🇬 狮城节点， 🇯🇵 日本节点， 🇨🇳 台湾节点，direct，policy-path=https://api.nexconvert.com/sub?target=surfboard&url=请手动填写你的机场订阅&insert=false&emoji=false&list=true&tfo=false&scv=false&fdn=false&sort=false，间隔=300，更新间隔=86400
 
-# Test url used by url-test and manually node speed test. Redirect proxy will use this url.
-proxy-test-url = http://www.gstatic.com/generate_204
+#分流分组
+🌏 国外网站=select， 🚀 手动切换， 🇭🇰 香港节点， 🇺🇸 美国节点， 🇸🇬 狮城节点， 🇯🇵 日本节点， 🇨🇳 台湾节点，直接，无警报=0，隐藏=0
+📽️ 国际媒体=select， 🚀 手动切换， 🇭🇰 香港节点， 🇺🇸 美国节点， 🇸🇬 狮城节点， 🇯🇵 日本节点， 🇨🇳 台湾节点，直接，无警报=0，隐藏=0
+🖥️ 微软服务=select， 🚀 手动切换， 🇭🇰 香港节点， 🇺🇸 美国节点， 🇸🇬 狮城节点， 🇯🇵 日本节点， 🇨🇳 台湾节点，直接，无警报=0，隐藏=0
+🌌 谷歌服务=select， 🚀 手动切换， 🇭🇰 香港节点， 🇺🇸 美国节点， 🇸🇬 狮城节点， 🇯🇵 日本节点， 🇨🇳 台湾节点，直接，无警报=0，隐藏=0
+📟 电报消息=select， 🚀 手动切换， 🇭🇰 香港节点， 🇺🇸 美国节点， 🇸🇬 狮城节点， 🇯🇵 日本节点， 🇨🇳 台湾节点，直接，无警报=0，隐藏=0
+🐦 推特消息=select， 🚀 手动切换， 🇭🇰 香港节点， 🇺🇸 美国节点， 🇸🇬 狮城节点， 🇯🇵 日本节点， 🇨🇳 台湾节点，直接，无警报=0，隐藏=0
+🤖  OpenAI=select， 🚀 手动切换， 🇭🇰 香港节点， 🇺🇸 美国节点， 🇸🇬 狮城节点， 🇯🇵 日本节点， 🇨🇳 台湾节点，直接，无警报=0，隐藏=0
+📺 哔哩哔哩=select，DIRECT， 🇭🇰 香港节点， 🇨🇳 台湾节点，no-alert=0，hidden=0
+🛑 广告拦截=选择、拒绝、直接、无警报=0、隐藏=0
+🐟 兜底分流=select， 🚀 手动切换， 🇭🇰 香港节点， 🇺🇸 美国节点， 🇸🇬 狮城节点， 🇯🇵 日本节点， 🇨🇳 台湾节点，no-alert=0，hidden=0
 
-# Test url used by url-test and manually node speed test. Direct proxy will use this url.
-internet-test-url = http://www.gstatic.cn/generate_204
-
-# Timeout for all connectivity test
-test-timeout = 5
-
-# Match domain won't get fake ip dns response
-always-real-ip = *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com
-
-# Establish a http proxy server on your device and provide proxy service in specified ip
-http-listen = 0.0.0.0:1234
-
-# Establish a socks5 proxy server on your device and provide proxy service in specified ip
-socks5-listen = 127.0.0.1:1235
-
-# If proxy not support udp relay, use DIRECT or REJECT instead
-udp-policy-not-supported-behaviour = DIRECT
-
-[Host]
-# map 'abc.com' to '1.2.3.4'
-abc.com = 1.2.3.4
-
-# map any domain end with '.dev' to '6.7.8.9'
-*.dev = 6.7.8.9
-
-# alias 'bar.com' dns query result to 'foo.com'
-foo.com = bar.com
-
-# assign '8.8.8.8' as dns server for 'bar.com'
-bar.com = server:8.8.8.8
-
-[Proxy]
-# build in policy
-On = direct
-Off = reject
-
-# http proxy
-ProxyHTTP = http, 1.2.3.4, 443, username, password
-
-# https proxy
-ProxyHTTPS = https, 1.2.3.4, 443, username, password, skip-cert-verify=true, sni=www.google.com
-
-# socks5 proxy
-ProxySOCKS5 = socks5, 1.2.3.4, 443, username, password, udp-relay=false
-
-# socks5 over tls proxy
-ProxySOCKS5TLS = socks5-tls, 1.2.3.4, 443, username, password, skip-cert-verify=true, sni=www.google.com
-
-# shadowsocks proxy, simple-obfs supported
-ProxySS = ss, 1.2.3.4, 8000, encrypt-method=chacha20-ietf-poly1305, password=abcd1234, udp-relay=false, obfs=http, obfs-host=www.google.com, obfs-uri=/
-
-# vmess proxy, tls and websocket supported, pure tcp is not supported
-ProxyVMess = vmess, 1.2.3.4, 8000, username=0233d11c-15a4-47d3-ade3-48ffca0ce119, udp-relay=false, ws=true, tls=true, ws-path=/v2, ws-headers=X-Header-1:value|X-Header-2:value, skip-cert-verify=true, sni=www.google.com, vmess-aead=true
-
-# trojan proxy, trojan grpc is not supported
-ProxyTrojan = trojan, 192.168.20.6, 443, password=password1, udp-relay=false, skip-cert-verify=true, sni=www.google.com
-
-# wireguard proxy
-ProxyWireguard = wireguard, section-name = HomeServer
-
-[WireGuard HomeServer]
-private-key = sDEZLACT3zgNCS0CyClgcBC2eYROqYrwLT4wdtAJj3s=
-self-ip = 10.0.2.2
-dns-server = 8.8.8.8
-mtu = 1280
-peer = (public-key = fWO8XS9/nwUQcqnkfBpKeqIqbzclQ6EKP20Pgvzwclg=, allowed-ips = 0.0.0.0/0, endpoint = 192.168.20.6:51820)
-
-[Proxy Group]
-# proxy group whose selected proxy can be changed manually
-SelectGroup = select, ProxyHTTP, ProxyHTTPS, DIRECT, REJECT
-
-# proxy group whose selected proxy can be decided based on url test result automatically
-AutoTestGroup = url-test, ProxySOCKS5, ProxySOCKS5TLS, url=http://www.gstatic.com/generate_204, interval=600, tolerance=100, timeout=5, hidden=true
-
-# proxy group with a external proxies list url
-ExternalGroup = select, policy-path=https://test.com/nodes.txt, policy-regex-filter=HK-.*
-AutoExternalGroup = url-test, policy-path=https://test.com/nodes.txt
-
-# proxy group which contains all proxy under [Proxy] section
-AllProxies = select, include-all-proxies = true
-
-# proxy group which contains all proxy from other group by name
-IncludeOtherGroup = select, include-other-group = "SelectGroup, ExternalGroup", policy-regex-filter=Proxy.*
-
-# proxy group whose selection is chosen randomly
-LoadBalanceGroup = load-balance, ProxyHTTP, ProxyHTTPS
-
-# proxy group just like url-test but follow 'first come first served' rule
-FallbackGroup = fallback, ProxySOCKS5, ProxySOCKS5TLS, url=http://www.gstatic.com/generate_204, interval=600, timeout=5
+# 自动测速
+🇭🇰 香港节点=url-test，policy-regex-filter=港|HK|(？I)Hong，interval=600，update-interval=86400，no-alert=0，hidden=0，include-other-group="🚀 手动切换"
+🇯🇵 日本节点=url-test，policy-regex-filter=日|东京|JP|(？I)日本，interval=600，update-interval=86400，no-alert=0，hidden=0，include-other-group="🚀 手动切换"
+🇨🇳 台湾节点=url-test，policy-regex-filter=台|湾|TW|(？I)台湾，interval=600，update-interval=86400，no-alert=0，hidden=0，include-other-group="🚀 手动切换"
+🇺🇸 美国节点=url-test，policy-regex-filter=美|US|(？I)状态|美国，时间间隔=600，更新时间间隔=86400，无警报=0，隐藏=0，include-other-group="🚀 手动切换"
+🇸🇬 狮城节点 = url-test, policy-regex-filter=新|坡|SG|(?i)Singapore, interval=600, update-interval=86400, no-alert=0, hidden=0, include-other-group = "🚀 手动切换"
 
 [Rule]
-# domain exact match 'www.apple.com' will be redirected to proxy named 'ProxyHTTP' in [Proxy] section 
-DOMAIN,www.apple.com,ProxyHTTP
 
-# domain exact match 'www.google.com' will be redirected to proxy group named 'SelectGroup' in [Proxy Group] section
-DOMAIN,www.google.com,SelectGroup
-
-# domain ends with 'apple.com' will be redirected to 'Proxy', DNS query of this domain will triggered in the remote proxy
-DOMAIN-SUFFIX,apple.com,Proxy,force-remote-dns
-
-# domain contains 'google' keyword will be redirected to 'Proxy', a fake ip will be returned in DNS query
-DOMAIN-KEYWORD,google,Proxy,enhanced-mode
-
-# destination ip match route '192.168.0.0/16' will be sent directly
-IP-CIDR,192.168.0.0/16,DIRECT
-
-# destination ip located in United State will be rejected
-GEOIP,US,REJECT
-
-# traffic sent by application whose package name is 'com.android.vending' will be sent to 'Proxy'
-PROCESS-NAME,com.android.vending,Proxy  # android package name
-PROCESS-NAME,*google*,Proxy             # android package name wildcard rule
-
-# traffic match external rules defined in 'https://ruleset.com/cn' will be sent to 'ProxyVMess'
-RULE-SET,https://ruleset.com/cn,ProxyVMess
-
-# traffic match external domain rules defined in 'https://domainset.com/ad' will be rejected'
-DOMAIN-SET,https://domainset.com/ad,REJECT
-
-# traffic sent using wifi whose ssid name is 'CMCC' will be rejected
-SUBNET,SSID:CMCC,REJECT
-
-# traffic sent using wifi whose bssid is 'F4-98-A0-73-3A-5B' will be sent directly
-SUBNET,BSSID:F4-98-A0-73-3A-5B,DIRECT
-
-# traffic sent through a router whose ip is '192.168.1.1' will be sent directly
-SUBNET,ROUTER:192.168.1.1,DIRECT
-
-# traffic sent using wifi will be sent directly
-SUBNET,TYPE:WIFI,DIRECT
-
-# traffic sent using wired network will be sent directly
-SUBNET,TYPE:WIRED,DIRECT
-
-# traffic sent using mobile network will be sent through 'SelectGroup'
-SUBNET,TYPE:CELLULAR,SelectGroup
-
-# traffic sent using mobile network whose MCC is 100 and MNC is 200, will be sent directly
-SUBNET,MCCMNC:100-200,DIRECT
-
-# traffic doesn't match rules above will be sent to 'ProxyTrojan'
-FINAL,ProxyTrojan
-
-[Panel]
-PanelA = title="Panel Title", content="Panel Content\nSecondLine", style=info
-```
-
-You can read on for detailed definitions of different sections
+# 分流规则 
+RULE-SET,https://cdn.jsdelivr.net/gh/Cats-Team/AdRules@main/adrules.list,🛑 广告拦截
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml,🤖 OpenAi
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram.yaml,📟 电报消息
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Twitter/Twitter.yaml,🐦 推特消息
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml,🖥️ 微软服务
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OneDrive/OneDrive.yaml,🖥️ 微软服务
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml,🖥️ 微软服务
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml,🌌 谷歌服务
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Google/Google.yaml,🌌 谷歌服务
+RULE-SET,https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/BiliBili/BiliBili.yaml,📺 哔哩哔哩
+RULE-SET,https://cdn.jsdelivr.net/gh/ddgksf2013/Filter@master/Streaming.list,📽️ 国际媒体
+RULE-SET,https://cdn.jsdelivr.net/gh/DivineEngine/Profiles@master/Surge/Ruleset/Global.list,🌏 国外网站
+GEOIP,CN,DIRECT
+最终的，🐟 兜底分流
